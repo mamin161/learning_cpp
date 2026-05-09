@@ -24,6 +24,7 @@ void function_b(); /* This is a declaration */
 
 int main(void)
 {
+	my_util::dump_file_content("./hello.cpp");
 	std::cout << "hello, world!" << std::endl;
 	
 	for (int i = 0; i < 10; ++i) {

@@ -13,4 +13,6 @@ namespace my_util
 
 	void reset_int(int *a);
 	void mod_int(int *a, int n);
+
+	void dump_file_content(const char* filepath);
 }
