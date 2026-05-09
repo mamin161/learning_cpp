@@ -3,6 +3,7 @@
 #include <stdexcept>
 #include "util.hpp"
 
+/* Macros */
 #define ADD(x, y) ((x) + (y))
 
 /* This is a definition */
@@ -37,6 +38,7 @@ int main(void)
 	function_a();
 	function_b();
 
+	/* Handling exception */
 	try
 	{
 		function_throws_error(256);
@@ -51,7 +53,15 @@ int main(void)
 	int res = math_int.add(2, 4);
 	std::cout << "Add result: " << res << std::endl;
 
-	std::cout << ADD(10, 12) << std::endl;
+	int add_macro = ADD(10, 12);
+	PRINT_VAR("add_macro", add_macro);
+
+	int origin = 10;
+	PRINT_VAR("Origin", origin);
+	my_util::reset_int(&origin);
+	PRINT_VAR("Origin after reset_int", origin);
+	my_util::mod_int(&origin, 15);
+	PRINT_VAR("Origin after mod_int", origin);
 
 	return 0;
 }
